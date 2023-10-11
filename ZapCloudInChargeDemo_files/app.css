@@ -1,0 +1,364 @@
+@font-face {
+  font-family: "Soehne";
+  font-weight: normal;
+  src: url("./soehne/soehne-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Soehne";
+  font-weight: bold;
+  src: url("./soehne/soehne-bold.woff2") format("woff2");
+}
+
+@media (max-width: 1280px) {
+  .main-body {
+    max-width: 800px;
+    /* All browser except mozilla based */ 
+    zoom: 70%;
+    /* Mozilla browser */ 
+    -moz-transform: scale(0.7);
+  }
+  html {
+    overflow: hidden;
+  }
+}
+
+html,
+body {
+  font-family: "Soehne";
+  padding: 0;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.4em;
+  font-weight: normal;
+}
+h2 {
+  font-size: 2.2em;
+  margin-top: 8px;
+}
+
+h2 > span {
+  text-decoration: underline;
+}
+
+@media (min-width: 1280px) {
+  .main-body {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1536px) {
+  .main-body {
+    max-width: 1536px;
+    margin: 0 auto;
+  }
+}
+
+button {
+  padding: 15px 48px;
+  background-color: #936f49;
+  color: white;
+  border-radius: 64px;
+  border: unset;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+select {
+  padding: 13px 16px;
+  border-radius: 8px;
+  border: 1px solid #c3c9c9;
+  margin-left: 8px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #795b3c;
+}
+
+button:active {
+  background-color: #5e472f;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header > .header-title {
+  padding-left: 160px;
+}
+
+.header .legend {
+  margin-left: auto;
+  margin-right: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.legend .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.charging .circle {
+  background-color: #40a7ed;
+}
+
+.idle .circle {
+  background-color: #4f8c39;
+}
+
+.waiting .circle {
+  background-color: #ffd700;
+}
+
+.circle {
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  border-radius: 100%;
+}
+
+div.controls {
+  margin-bottom: 32px;
+  padding: 16px 32px;
+  background-color: #19312f;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+div.controls label {
+  color: white;
+  font-weight: bold;
+}
+
+.controls .logo {
+  position: absolute;
+  margin: auto;
+  background-image: url("./images/logo.svg");
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  height: 40px;
+  width: 130px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+ul {
+  position: relative;
+}
+div#incharge-demo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 24px;
+  overflow: auto;
+  min-width: 1058px;
+}
+div#incharge-demo > ul::before {
+  content: "";
+  position: absolute;
+  border-top: 5px solid #ccc;
+  height: 10px;
+  width: 32px;
+  left: 130px;
+  top: 78px;
+}
+
+ul.circuit {
+  padding-left: 32px;
+  margin: 0 0 0 0;
+  display: flex;
+}
+ul ul.circuit::before,
+ul ul.circuit::after {
+  content: "";
+  position: absolute;
+}
+ul ul.circuit::before {
+  border-top: 5px solid #ccc;
+  height: 10px;
+  left: 0px;
+  top: 20px;
+  right: 0;
+}
+ul ul.circuit:first::before {
+  left: -32px;
+}
+ul ul.circuit::after {
+  border-left: 5px solid #ccc;
+  top: 22px;
+  bottom: -22px;
+  width: 5px;
+  left: 0;
+}
+ul ul.circuit:last-of-type::after {
+  height: 0px;
+}
+ul.circuit > h2 {
+  display: none;
+}
+ul.chargers {
+  margin-top: 58px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+ul.chargers.root-chargers {
+  flex-direction: column;
+  padding-right: 64px;
+}
+
+ul ul {
+  display: inline-block;
+}
+ul li.charger {
+  float: left;
+  list-style-type: none;
+  display: inline-block;
+  margin-bottom: 32px;
+  height: 130px;
+  /*border: 1px dotted #333;*/
+  position: relative;
+  text-align: center;
+}
+ul li.charger::after {
+  content: "";
+  position: absolute;
+  height: 34px;
+  border-left: 5px solid #ccc;
+  top: -34px;
+  left: 48px;
+  z-index: -1;
+}
+button.reset {
+  margin-left: 32px;
+}
+button.charger-item {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-image: url("./images/ready.svg");
+  background-position: center;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  text-indent: -10000px;
+}
+button.charger-item:active {
+  background-size: 95%;
+}
+
+button.charger-item:hover {
+  opacity: 70%;
+}
+
+li.charger.charging button.charger-item {
+  background-image: url("./images/charging.svg");
+}
+
+li.charger.queued button.charger-item {
+  background-image: url("./images/waiting.svg");
+}
+div.charge-power {
+  padding-top: 4px;
+  font-size: 1em;
+  font-weight: bold;
+}
+div.charge-current {
+  padding-top: 4px;
+  color: #818181;
+  font-size: 0.9em;
+}
+div.current-bar-container {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  width: 128px;
+  align-items: center;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+div.current-bar-container.main-current {
+  margin-top: 70px;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.main-current::after {
+  content: "";
+  position: absolute;
+  right: -42px;
+  top: -2px;
+  border-bottom: 5px solid #ccc;
+  height: 10px;
+  width: 40px;
+}
+
+div.current-bar-container .charge-current {
+  padding-bottom: 4px;
+  font-size: 0.9em;
+}
+div.current-bar-container .charge-power {
+  padding-top: 4px;
+}
+div.current-bars {
+  width: 90px;
+  height: 50px;
+  position: relative;
+}
+div.current-bars > div {
+  padding: 0;
+  margin: 0;
+  width: 25px;
+  position: absolute;
+  border: 1px dotted #ccc;
+  bottom: 0;
+  top: 0;
+}
+div.current-bars > div > div {
+  background-color: #40a7ed;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+div.current-bars > div.phase1 {
+  left: 0;
+}
+div.current-bars > div.phase1 .bar {
+  bottom: 0;
+  top: 20%;
+}
+div.current-bars > div.phase2 {
+  left: 30px;
+}
+div.current-bars > div.phase2 .bar {
+  bottom: 0;
+  top: 50%;
+}
+div.current-bars > div.phase3 {
+  left: 60px;
+}
+div.current-bars > div.phase3 .bar {
+  bottom: 0;
+  top: 0%;
+}
